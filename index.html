@@ -10,9 +10,174 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
+     <script src="https://cdn.jsdelivr.net/npm/vega@4.2.0/build/vega.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc4/build/vega-lite.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.18.2/build/vega-embed.js"></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
 	</head>
+	
+	<style>
+#map {
+    position: fixed;
+    width:100%;
+    opacity: .7;
+}
+#features {
+    width: 700px;
+    margin-left: 2%;
+    font-family: sans-serif;
+    overflow-y: scroll;
+    background-color: #fafafa;
+    background-blend-mode: multiply;
+    opacity: .83;
+}
+.text section 
+{
+  font-size: 14px;  
+}
+section {
+    padding:  200px 50px;
+    line-height: 25px;
+    border-bottom: 50px ;
+    border-top: 100px ;
+    opacity: .9;
+    font-size: 18px; 
+  
+  background-blend-mode: darken;
+    
+}
+.flourish-embed {
+    
+    width: 600px;
+    height: 800px;
+}
+section.active1 {
+    opacity: 100;
+}
+section:last-child {
+    border-bottom: 100px;
+    margin-bottom: 100px;
+}
+</style>
+	
 	<body>
+<div id='map'></div>
+<div id='features'>
+    <section id='Introduction' class='active'>
+        <h1>Kerala Floods</h1>
+        <p>After the devastating floods in kerala officials have been blamed for exacerbating the situtation by not opening the dams gradually. With the states complex river network, the water levels inside vary, but claims were made, that they were already full and unleashed the excess water. But was it really the reason? <br> Below is the mapped storage capacity and rainfall data of 4 major dams in kerala which in some way could tells us the story, who is to blame? </br> Scroll down.  </p>
+        <img src="https://raw.githubusercontent.com/TapiaRidhima/Kviz/master/sgwpbysahg-1531817494.jpg" width=100%>
 
+    </section>
+    <section id='Idukki Dam'>
+        <h3>Idukki Dam</h3>
+        <p>Idukki  Dam is a hydroelectric dam constructed on river Periyar.It has a maximum storage height of 169 meters.The grapgh below shows the datewise change in the storage of waterlevel in the dam with rainfall received on each day.From the grapgh its cvery evident that the dam has been fluctuating its storage steeply within the rainfall period .A steep fall in the storage when the floods hit the state shows that the dam water might have Exerbated the issue</p>
+<iframe src='https://public.flourish.studio/visualisation/106735/embed' frameborder='0' scrolling='no' style='width:100%;height:600px;'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/106735/?utm_source=embed&utm_campaign=visualisation/106735' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+   </section>
+    <section id='Idamalayar Dam'>
+        <h3>Idamalayar Dam</h3>
+        <p>Idalmayar Dam is on the the river Idalmayar.It has maximum storage height of 102m .The grapgh below shows that the dam was maintaining its storage at 96% earlier in the month.And during the floods dam tried to retain its storage to 100% even when the rainfall was high but sudden reduce in the storage after 17th"</p>
+       <iframe src='https://public.flourish.studio/visualisation/106879/embed' frameborder='0' scrolling='no' style='width:100%;height:600px;'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/106879/?utm_source=embed&utm_campaign=visualisation/106879' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+    </section>
+    <section id='Pamba Dam'>
+        <h3>Pampa Dam</h3>
+        <p>Pamba dam is also situated on river pamba. Its maximum height of storage is 57.2m The frequent changes in storage level shows that the dam has also opened its gates many time to maintain the level but there is no steep fall in the  storage.</p>
+        <iframe src='https://public.flourish.studio/visualisation/106882/embed' frameborder='0' scrolling='no' style='width:100%;height:600px;'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/106882/?utm_source=embed&utm_campaign=visualisation/106882' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+        
+    </section>
+   
+    <section id='Mattupetty Dam'>
+        <h3>Mattupetty Dam</h3>
+        <p>Mattupetty dam is situated on the river palar .Maximum storage height is 85.34m. As per the graph the dam tried to retain the water level but there is steep fall in water level on 17th whereas the gate was opened on 14th.</p>
+       <iframe src='https://public.flourish.studio/visualisation/106886/embed' frameborder='0' scrolling='no' style='width:100%;height:600px;'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/106886/?utm_source=embed&utm_campaign=visualisation/106886' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+    <section id='All Dams'>
+        <h3>Comparison</h3>
+        <p>The graph shows the journey of each dam during the floods.
+        Seeing the journey of storage level of these 4 dams we can say that Pamba dam has been  little uniform with release of water whereas Idukki and Idalmayar dams show sharp decrease in the levels which shows that this water release could have exerbated he flood </p>
+       <iframe src='https://public.flourish.studio/visualisation/106892/embed' frameborder='0' scrolling='no' style='width:100%;height:600px;'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/106892/?utm_source=embed&utm_campaign=visualisation/106892' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+    </section>
+
+
+        
+    </section>
+</div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoicmlkdGFwaWEiLCJhIjoiY2psZjBkdWMzMG1sZTNrcGMyMWdndHlndSJ9.u21QgNWEB-aLhXEXjrDgjw';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/ridtapia/cjm6jvj341dhx2sqt91e68mft',
+    center: [76.9737164,9.8421153],
+    zoom: 9,
+    bearing: 90,
+    pitch: 30
+});
+var chapters = {
+    'Introduction': {
+        bearing: 27,
+        center: [76.9737164,9.8421153],
+        zoom: 15.5,
+        pitch: 20
+    },
+    'Idukki Dam': {
+       
+        center: [76.9737164,9.8421153],
+        bearing: 50,
+        zoom: 15,
+        speed: 0.5,
+        pitch: 40
+    },
+    'Idamalayar Dam': {
+        bearing: 90,
+        center: [76.705833, 10.221667],
+        zoom: 13,
+        speed: 0.6,
+        pitch: 40
+    },
+    'Pampa Dam': {
+        bearing: 90,
+        center: [77.1679283, 9.3808836],
+        zoom: 12.3
+    },
+    
+     'Mattupetty Dam': {
+        bearing: 180,
+        center: [77.1238008, 10.1063903],
+        zoom: 12.3
+    },
+    
+};
+// On every scroll event, check which element is on screen
+window.onscroll = function() {
+    var chapterNames = Object.keys(chapters);
+    for (var i = 0; i < chapterNames.length; i++) {
+        var chapterName = chapterNames[i];
+        if (isElementOnScreen(chapterName)) {
+            setActiveChapter(chapterName);
+            break;
+        }
+    }
+};
+var activeChapterName = 'Introduction';
+function setActiveChapter(chapterName) {
+    if (chapterName === activeChapterName) return;
+    map.flyTo(chapters[chapterName]);
+    document.getElementById(chapterName).setAttribute('class', 'active');
+    document.getElementById(activeChapterName).setAttribute('class', '');
+    activeChapterName = chapterName;
+}
+function isElementOnScreen(id) {
+    var element = document.getElementById(id);
+    var bounds = element.getBoundingClientRect();
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+ 
+  </script>
 		<!-- Wrapper -->
 			<div id="wrapper">
 
