@@ -16,22 +16,6 @@
     
 </head>
 <body>
-<!-- header top section -->
-<section class="banner" role="banner">
-  <header id="header">
-    <div class="header-content clearfix"> <a class="logo" href="index.html"><img src="images/logo.png" alt=""></a>
-      <nav class="navigation" role="navigation">
-        <ul class="primary-nav">
-          <!--<li>612.269.8419</li>
-          <li><a href="mainlto:hello@phdl.co">none</a></li>
-        </ul> -->
-      </nav>
-      <a href="#" class="nav-toggle">Menu<span></span></a> </div>
-  </header>
-</section>
-<!-- header top section --> 
-<!-- header content section -->
-<section id="works-info" class="section ">
 
 
 <style>
@@ -49,7 +33,6 @@
     background-blend-mode: multiply;
     opacity: .83;
 }
-
 .text section 
 {
   font-size: 14px;  
@@ -65,19 +48,14 @@ section {
   background-blend-mode: darken;
     
 }
-
 .flourish-embed {
     
     width: 600px;
     height: 800px;
-
 }
-
 section.active1 {
     opacity: 100;
 }
-
-
 section:last-child {
     border-bottom: 100px;
     margin-bottom: 100px;
@@ -127,7 +105,6 @@ section:last-child {
 </div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoicmlkdGFwaWEiLCJhIjoiY2psZjBkdWMzMG1sZTNrcGMyMWdndHlndSJ9.u21QgNWEB-aLhXEXjrDgjw';
-
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/ridtapia/cjm6jvj341dhx2sqt91e68mft',
@@ -136,7 +113,6 @@ var map = new mapboxgl.Map({
     bearing: 90,
     pitch: 30
 });
-
 var chapters = {
     'Introduction': {
         bearing: 27,
@@ -183,7 +159,6 @@ var chapters = {
      },
     
 };
-
 // On every scroll event, check which element is on screen
 window.onscroll = function() {
     var chapterNames = Object.keys(chapters);
@@ -195,59 +170,20 @@ window.onscroll = function() {
         }
     }
 };
-
 var activeChapterName = 'Introduction';
 function setActiveChapter(chapterName) {
     if (chapterName === activeChapterName) return;
-
     map.flyTo(chapters[chapterName]);
-
     document.getElementById(chapterName).setAttribute('class', 'active');
     document.getElementById(activeChapterName).setAttribute('class', '');
-
     activeChapterName = chapterName;
 }
-
 function isElementOnScreen(id) {
     var element = document.getElementById(id);
     var bounds = element.getBoundingClientRect();
     return bounds.top < window.innerHeight && bounds.bottom > 0;
 }
-
-
  
   </script>
-    <section id="backto" class="work-detail section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2 text-center section"> <a href="index.html"><i class="fa fa-th fa-2x"></i></a>
-        <p>Back to projects</p>
-      </div>
-    </div>
-  </div>
-</section>
-<footer class="footer">
-  <div class="container">
-    <div class="col-md-6 left">
-      <!--<h4>Let's work together</h4>
-      <p> Call: 612.269.8419 OR Email : <a href="mailto:hello@agency.com"> hello@agency.com </a></p>
-    </div>
-    <div class="col-md-6 right">
-      <p>© 2015 All rights reserved. All Rights Reserved<br>
-        Made with <i class="fa fa-heart pulse"></i> by <a href="http://www.designstub.com/">Designstub</a></p>
-    </div>
-  </div> -->
-</footer>
-<!-- footer section --> 
-
-<!-- JS FILES --> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-<script src="js/bootstrap.min.js"></script> 
-
-<script src="js/jquery.fancybox.pack.js"></script> 
-<script src="js/jquery.waypoints.min.js"></script> 
-<script src="js/retina.min.js"></script> 
-<script src="js/modernizr.js"></script> 
-<script src="js/main.js"></script>
 </body>
 </html>
